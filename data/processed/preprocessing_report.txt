@@ -1,0 +1,9 @@
+
+=== 数据基本信息 ===
+{'总记录数': 120836, '特征数量': 14, '特征列表': ['wait_time', 'rolling_mean_wait', 'coal_type_mean_wait', 'coal_type_mean_wait_1h', 'coal_type_mean_wait_30min', 'coal_type_mean_wait_rolling', 'coal_type_truck_count', 'hourly_truck_count', 'load_period', 'period_truck_count', 'hourly_mean_wait', 'wait_time_ratio', 'load_efficiency', 'hour']}
+
+=== 等待时间统计(分钟) ===
+{'平均等待时间': 2.634340309349241e-17, '最短等待时间': -2.242772472071235, '最长等待时间': 0.8817796623780172, '等待时间标准差': 1.0000041378653994}
+
+=== 特征相关性 ===
+{'wait_time': 1.0, 'rolling_mean_wait': 0.841937764787374, 'coal_type_mean_wait_30min': 0.8335318115294471, 'coal_type_mean_wait_rolling': 0.7714672894201988, 'coal_type_mean_wait_1h': 0.7683094090716137, 'wait_time_ratio': 0.4738475350161398, 'coal_type_mean_wait': 0.4365284629446191, 'coal_type_truck_count': 0.4137516412869581, 'hourly_truck_count': 0.35554114947054155, 'load_period': 0.350491466744039, 'period_truck_count': 0.2636057956266295, 'hourly_mean_wait': 0.23360014279370378, 'load_efficiency': 0.14243490846462725, 'hour': 0.13606432539570332}

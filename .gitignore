@@ -1,0 +1,21 @@
+# 忽略 Python 字节码文件
+*.pyc
+*.pyo
+__pycache__/
+
+# 忽略日志文件
+logs/*.log
+logs/evaluation/*.log
+# 忽略模型文件
+models/lstm/*.keras
+models/xgboost/*.json
+
+# 忽略数据文件
+data/featured/*.csv 
+data/featured/*.log
+data/raw/*.csv
+data/processed/*.csv 
+data/processed/*.png
+
+# 忽略验证文件
+evaluation/

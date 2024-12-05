@@ -1,0 +1,11 @@
+feature,importance
+rolling_mean_wait,0.65764725
+coal_type_mean_wait_30min,0.14919734
+wait_time_ratio,0.06654075
+coal_type_mean_wait_rolling,0.038079996
+coal_type_mean_wait_1h,0.02031024
+coal_type_mean_wait,0.019368576
+coal_type_truck_count,0.013715087
+period_truck_count,0.01209656
+load_period,0.01200944
+hourly_truck_count,0.011034767
