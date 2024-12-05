@@ -1,0 +1,29 @@
+# 评估LSTM模型
+python evaluate.py --model lstm
+
+# 评估XGBoost模型
+python evaluate.py --model xgboost
+
+# 评估混合模型
+python evaluate.py --model hybrid
+
+# 评估所有模型
+python evaluate.py --model all
+
+# 使用自定义参数
+python evaluate.py --model lstm --data_path /path/to/data.csv --models_dir /path/to/models --output_dir /path/to/output --gpu 0
+
+
+
+
+# 评估XGBoost模型
+python evaluate.py --model xgboost --xgb_model /path/to/your/xgboost_model.json
+
+# 评估LSTM模型
+python m_evaluate.py --model lstm --lstm_model /home/lx/LSTMCoal/models/lstm/best_lstm_model.keras
+
+# 评估混合模型（需要同时指定两个模型）
+python evaluate.py --model hybrid --lstm_model /path/to/lstm.keras --xgb_model /path/to/xgb.json
+
+# 评估所有模型
+python evaluate.py --model all --lstm_model /path/to/lstm.keras --xgb_model /path/to/xgb.json

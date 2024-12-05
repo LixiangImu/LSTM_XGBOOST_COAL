@@ -5,6 +5,7 @@ import argparse
 from src.models.lstm_model import LSTMPredictor
 from src.models.xgboost_model import XGBoostPredictor
 from datetime import datetime
+import pandas as pd
 
 def setup_logging(model_type):
     """配置日志系统"""
@@ -29,23 +30,27 @@ def setup_logging(model_type):
 def train_lstm(data_path, output_dir, logger):
     """训练LSTM模型"""
     try:
-        lstm_output = output_dir / 'lstm'
-        lstm_output.mkdir(exist_ok=True)
-        
-        # 创建模型特定的日志目录
-        model_log_dir = Path('logs/lstm')
-        model_log_dir.mkdir(parents=True, exist_ok=True)
-        
-        logger.info("开始LSTM模型训练...")
+        # 初始化 LSTM 预测器
         lstm_predictor = LSTMPredictor(
-            sequence_length=10,
-            log_dir=model_log_dir  # 传递日志目录
+            log_dir=output_dir,
+            seq_length=24
         )
-        lstm_predictor.train(
-            data_path=data_path,
-            output_dir=lstm_output
-        )
+        
+        # 加载数据
+        logger.info("正在加载数据...")
+        data = pd.read_csv(data_path)
+        
+        # 准备特征和目标变量
+        y = data['wait_time']  # 使用 wait_time 作为目标变量
+        X = data.drop('wait_time', axis=1)  # 移除目标变量列
+        
+        logger.info(f"数据加载完成。特征数量: {X.shape[1]}, 样本数量: {X.shape[0]}")
+        
+        # 训练模型
+        history = lstm_predictor.train(X, y)
+        
         logger.info("LSTM模型训练完成")
+        return lstm_predictor
         
     except Exception as e:
         logger.error(f"LSTM模型训练失败: {str(e)}")

@@ -4,7 +4,7 @@
 __pycache__/
 
 # 忽略日志文件
-logs/*.log
+logs/*
 logs/evaluation/*.log
 # 忽略模型文件
 models/lstm/*.keras
@@ -16,6 +16,7 @@ data/featured/*.log
 data/raw/*.csv
 data/processed/*.csv 
 data/processed/*.png
+data/processed/*.txt
 
 # 忽略验证文件
 evaluation/
